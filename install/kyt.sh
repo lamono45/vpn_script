@@ -2,7 +2,7 @@
 
 # --------------------------------------------------
 # kyt.sh – Setup dasar server & konfigurasi menu
-# Bagian dari: https://github.com/lamono45/vpn-script
+# Bagian dari: https://github.com/lamono45/vpn_script
 # --------------------------------------------------
 
 # Warna
