@@ -1,0 +1,11 @@
+[Unit]
+Description=User Limit Checker for VPN
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/user-limit
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

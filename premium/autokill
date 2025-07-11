@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "🔄 Menjalankan auto kill..."
+
+users=$(ls /etc/v2ray/user | sed 's/.json$//')
+
+for user in $users; do
+  limit_file="/etc/v2ray/user/${user}.limit"
+  if [[ -f $limit_file ]]; then
+    limit=$(cat $limit_file)
+    online=$(ps -ef | grep -i $user | grep -v grep | wc -l)
+    if [[ $online -gt $limit ]]; then
+      pkill -u $user
+      echo "🚫 $user killed (login > $limit)"
+    fi
+  fi
+done

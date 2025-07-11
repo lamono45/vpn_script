@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "📋 Daftar akun aktif:"
+ls /etc/v2ray/user | sed 's/.json$//'

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+read -p "🧑 Username        : " user
+read -p "📆 Masa aktif (hari): " masaaktif
+
+domain=$(cat /etc/vpn-script/config/ipserver)
+uuid=$(cat /proc/sys/kernel/random/uuid)
+exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
+
+echo "### $user $exp" >> /etc/v2ray/vless.json
+echo "### $user $exp" >> /etc/v2ray/vmess.json
+
+cat > /etc/v2ray/user/$user.json <<-END
+{
+  "user": "$user",
+  "uuid": "$uuid",
+  "exp": "$exp"
+}
+END
+
+echo "Akun Premium berhasil dibuat:"
+echo "User   : $user"
+echo "UUID   : $uuid"
+echo "Expired: $exp"
+
+systemctl restart v2ray

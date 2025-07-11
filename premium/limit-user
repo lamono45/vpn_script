@@ -1,0 +1,7 @@
+#!/bin/bash
+
+read -p "🔒 Masukkan username: " user
+read -p "🔢 Batas login maksimum (misal: 1): " maxlogin
+
+echo "$maxlogin" > /etc/v2ray/user/${user}.limit
+echo "✅ Batas login $user diset ke $maxlogin"

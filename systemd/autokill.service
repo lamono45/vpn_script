@@ -1,0 +1,11 @@
+[Unit]
+Description=Autokill VPN Users If Limit Exceeded
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/autokill
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

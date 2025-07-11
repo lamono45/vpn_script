@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Buat akun trial (aktif 1 hari)
+
+domain=$(cat /etc/vpn-script/config/ipserver)
+user="trial$(tr -dc A-Za-z0-9 </dev/urandom | head -c4)"
+uuid=$(cat /proc/sys/kernel/random/uuid)
+exp=$(date -d "1 day" +"%Y-%m-%d")
+
+echo "### $user $exp" >> /etc/v2ray/vless.json
+echo "### $user $exp" >> /etc/v2ray/vmess.json
+
+cat > /etc/v2ray/user/$user.json <<-END
+{
+  "user": "$user",
+  "uuid": "$uuid",
+  "exp": "$exp"
+}
+END
+
+echo "Trial User: $user"
+echo "UUID: $uuid"
+echo "Expired: $exp"
+
+# Restart V2Ray (sesuaikan nama service jika beda)
+systemctl restart v2ray
