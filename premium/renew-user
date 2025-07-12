@@ -3,17 +3,17 @@
 read -p "🔁 Masukkan username: " user
 read -p "📆 Tambah masa aktif (hari): " tambah
 
-if [[ -f /etc/v2ray/user/$user.json ]]; then
-  exp_old=$(grep "### $user" /etc/v2ray/vless.json | awk '{print $3}')
+if [[ -f /etc/xray/user/$user.json ]]; then
+  exp_old=$(grep "### $user" /etc/xray/vless.json | awk '{print $3}')
   exp_new=$(date -d "$exp_old + $tambah days" +"%Y-%m-%d")
 
-  sed -i "/^### $user /c\### $user $exp_new" /etc/v2ray/vless.json
-  sed -i "/^### $user /c\### $user $exp_new" /etc/v2ray/vmess.json
+  sed -i "/^### $user /c\### $user $exp_new" /etc/xray/vless.json
+  sed -i "/^### $user /c\### $user $exp_new" /etc/xray/vmess.json
 
-  sed -i "/\"exp\":/c\  \"exp\": \"$exp_new\"" /etc/v2ray/user/$user.json
+  sed -i "/\"exp\":/c\  \"exp\": \"$exp_new\"" /etc/xray/user/$user.json
 
   echo "✅ Masa aktif $user diperpanjang hingga $exp_new"
-  systemctl restart v2ray
+  systemctl restart xray
 else
   echo "❌ User $user tidak ditemukan."
 fi
