@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "📋 Daftar akun aktif:"
-ls /etc/v2ray/user | sed 's/.json$//'
+ls /etc/xray/user | sed 's/.json$//'
