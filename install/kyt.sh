@@ -45,16 +45,16 @@ systemctl restart xray
 # --- Salin Semua Script Menu dan Premium ke /usr/local/bin ---
 echo -e "${GREEN}📦 Menyalin script ke /usr/local/bin...${NC}"
 
-for file in premium/*; do
+for file in ../premium/*; do
     cp "$file" /usr/local/bin/
 done
 
-for file in menu/*; do
+for file in ../menu/*; do
     cp "$file" /usr/local/bin/
 done
 
 # Menu utama
-cp menu/menu1122.sh /usr/local/bin/menu
+cp ../menu/menu1122.sh /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 
 # Tambahkan agar menu muncul otomatis saat login
