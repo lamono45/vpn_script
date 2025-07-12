@@ -6,8 +6,8 @@
 # ----------------------------------------
 
 CONFIG_DIR="/etc/vpn"
-mkdir -p "$CONFIG_DIR"
-
+echo "🌐 konfigurasi domain "
+mkdir -p /etc/vpn-script/config
 read -rp "🌐 Masukkan domain/subdomain Anda (biarkan kosong untuk pakai IP VPS): " DOMAIN
 
 if [[ -z $DOMAIN ]]; then
