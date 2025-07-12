@@ -2,12 +2,12 @@
 
 read -p "🗑️ Masukkan username yang ingin dihapus: " user
 
-if [[ -f /etc/v2ray/user/$user.json ]]; then
-  rm -f /etc/v2ray/user/$user.json
-  sed -i "/^### $user /d" /etc/v2ray/vless.json
-  sed -i "/^### $user /d" /etc/v2ray/vmess.json
+if [[ -f /etc/xray/user/$user.json ]]; then
+  rm -f /etc/xray/user/$user.json
+  sed -i "/^### $user /d" /etc/xray/vless.json
+  sed -i "/^### $user /d" /etc/xray/vmess.json
   echo "✅ User $user berhasil dihapus."
-  systemctl restart v2ray
+  systemctl restart xray
 else
   echo "❌ User $user tidak ditemukan."
 fi
