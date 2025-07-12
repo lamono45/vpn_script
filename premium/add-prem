@@ -7,10 +7,10 @@ domain=$(cat /etc/vpn/domain.conf)
 uuid=$(cat /proc/sys/kernel/random/uuid)
 exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
 
-echo "### $user $exp" >> /etc/v2ray/vless.json
-echo "### $user $exp" >> /etc/v2ray/vmess.json
+echo "### $user $exp" >> /etc/xray/vless.json
+echo "### $user $exp" >> /etc/xray/vmess.json
 
-cat > /etc/v2ray/user/$user.json <<-END
+cat > /etc/xray/user/$user.json <<-END
 {
   "user": "$user",
   "uuid": "$uuid",
@@ -23,4 +23,4 @@ echo "User   : $user"
 echo "UUID   : $uuid"
 echo "Expired: $exp"
 
-systemctl restart v2ray
+systemctl restart xray
