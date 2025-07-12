@@ -41,8 +41,8 @@ for file in menu/*; do
 done
 
 # Menu utama
-cp install/menu1122.sh /usr/local/bin/menu
-chmod +x /usr/local/bin/*
+cp menu/menu1122.sh /usr/local/bin/menu
+chmod +x /usr/local/bin/menu
 
 # Tambahkan agar menu muncul otomatis saat login
 if ! grep -q "menu" ~/.bashrc; then
