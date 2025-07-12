@@ -29,6 +29,15 @@ bash "$(pwd)/install/bbr.sh"
 echo -e "${GREEN}🛠️ Menginstal tools tambahan...${NC}"
 bash "$(pwd)/install/tools.sh"
 
+echo "📦 Menginstall Xray"
+bash <(curl Ls https:raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
+# pastikan direktori user config dibuat
+mkdir -p /etc/xray/user
+
+# Buat file config default jika belum ada
+touch /etc/xray/vless.json
+ouch /etc/xray/vmess.json
+
 # --- Salin Semua Script Menu dan Premium ke /usr/local/bin ---
 echo -e "${GREEN}📦 Menyalin script ke /usr/local/bin...${NC}"
 
