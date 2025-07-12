@@ -2,7 +2,7 @@
 
 # Buat akun trial (aktif 1 hari)
 
-domain=$(cat /etc/vpn-script/config/ipserver)
+domain=$(cat /etc/vpn/domain.conf)
 user="trial$(tr -dc A-Za-z0-9 </dev/urandom | head -c4)"
 uuid=$(cat /proc/sys/kernel/random/uuid)
 exp=$(date -d "1 day" +"%Y-%m-%d")
