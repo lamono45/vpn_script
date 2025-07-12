@@ -7,10 +7,10 @@ user="trial$(tr -dc A-Za-z0-9 </dev/urandom | head -c4)"
 uuid=$(cat /proc/sys/kernel/random/uuid)
 exp=$(date -d "1 day" +"%Y-%m-%d")
 
-echo "### $user $exp" >> /etc/v2ray/vless.json
-echo "### $user $exp" >> /etc/v2ray/vmess.json
+echo "### $user $exp" >> /etc/xray/vless.json
+echo "### $user $exp" >> /etc/xray/vmess.json
 
-cat > /etc/v2ray/user/$user.json <<-END
+cat > /etc/xray/user/$user.json <<-END
 {
   "user": "$user",
   "uuid": "$uuid",
@@ -23,4 +23,4 @@ echo "UUID: $uuid"
 echo "Expired: $exp"
 
 # Restart V2Ray (sesuaikan nama service jika beda)
-systemctl restart v2ray
+systemctl restart xray
