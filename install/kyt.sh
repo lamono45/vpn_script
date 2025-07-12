@@ -15,7 +15,7 @@ echo -e "${GREEN}▶️ Memulai konfigurasi server VPN...${NC}"
 
 # --- Menampilkan Logo ---
 echo -e "${GREEN}🖼️ Menampilkan logo...${NC}"
-bash "$(pwd)/install/logo.sh"
+bash "$(pwd)logo.sh"
 
 # --- Konfigurasi Domain ---
 echo -e "${GREEN}🌐 Konfigurasi domain...${NC}"
@@ -30,7 +30,7 @@ echo -e "${GREEN}🛠️ Menginstal tools tambahan...${NC}"
 bash "$(pwd)/install/tools.sh"
 
 echo "📦 Menginstall Xray"
-bash <(curl Ls https:raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
+bash <(curl -o /usr/bin/xray https:raw.githubusercontent.com/XTLS/Xray-inatall/main/install-release.sh)
 # pastikan direktori user config dibuat
 mkdir -p /etc/xray/user
 
