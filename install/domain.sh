@@ -19,6 +19,7 @@ fi
 echo "$DOMAIN" > "$CONFIG_DIR/domain.conf"
 echo "$DOMAIN" > "/etc/vpn-script/config/ipserver"
 
+# Tampilkan informasi
 echo "✅ Domain/IP disimpan di:"
-echo "  • $CONFIG_DIR/domain.conf"
+echo "  • /etc/vpn/domain.conf"
 echo "  • /etc/vpn-script/config/ipserver (kompatibilitas lama)"
