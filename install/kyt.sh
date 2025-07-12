@@ -36,7 +36,11 @@ mkdir -p /etc/xray/user
 
 # Buat file config default jika belum ada
 touch /etc/xray/vless.json
-ouch /etc/xray/vmess.json
+touch /etc/xray/vmess.json
+
+# Aktifkan Xray service
+systemctl enable xray
+systemctl restart xray
 
 # --- Salin Semua Script Menu dan Premium ke /usr/local/bin ---
 echo -e "${GREEN}📦 Menyalin script ke /usr/local/bin...${NC}"
