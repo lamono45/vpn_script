@@ -29,8 +29,9 @@ bash "$(pwd)/install/bbr.sh"
 echo -e "${GREEN}🛠️ Menginstal tools tambahan...${NC}"
 bash "$(pwd)/install/tools.sh"
 
-echo "📦 Menginstall Xray"
-bash <(curl -s https:raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
+echo -e "${GREEN}📦 Menginstall Xray...${NC}"
+bash <(curl -s https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
+
 # pastikan direktori user config dibuat
 mkdir -p /etc/xray/user
 
