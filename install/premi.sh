@@ -2,7 +2,7 @@
 
 # --------------------------------------------------
 # premi.sh – Konfigurasi fitur akun premium & trial
-# Bagian dari: https://github.com/lamono45/vpn-script
+# Bagian dari: https://github.com/lamono45/vpn_script
 # --------------------------------------------------
 
 clear
